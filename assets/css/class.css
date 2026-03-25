@@ -1,0 +1,21 @@
+.main-bg{
+  background-image: url(../img/background-main.svg);
+  background-size: cover;
+  background-position: center center;
+  color: var(--white-color);
+}
+
+.white-bg{
+  background-color: var(--white-color);
+  color: var(--font-color);
+}
+
+.light-gray-bg{
+  background-color: var(--light-gray-color);
+  color: var(--font-color);
+}
+
+.blue-bg{
+  background-color: var(--secundary-color);
+  color: var(--white-color);
+}

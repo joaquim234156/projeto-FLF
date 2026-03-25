@@ -1,0 +1,13 @@
+:root{
+  --white-color:#FFFFFF;
+  --light-gray-color: #F4F6FA;
+  --primary-color:#3CA4DC;
+  --secundary-color:#26348B;
+  --blue-color:#0003FF;
+  --light-blue-color:#47AAE1;
+  --secundary-blue-color:#0E3BF8;
+  --font-color:#1D1D1B;
+  --button-color:#35A3DC;
+  --tag-color:#9D4EDD;
+  --gap:3rem;
+}
