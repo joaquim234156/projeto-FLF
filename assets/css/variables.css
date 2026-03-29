@@ -1,14 +1,58 @@
 :root{
-  --white-color:#FFFFFF;
+
+  /* ══════════════════════════════════════════════════════
+   VARIÁVEIS GLOBAIS — FLF 2026.2
+   Centraliza cores, tipografia e medidas do layout.
+   Para mudar a identidade visual, edite apenas aqui.
+══════════════════════════════════════════════════════ */
+  /* ── Cores institucionais FLF ─────────────────────── */
+  --primary-color:     #3CA4DC;
+  --primary-dark:      #2a87b8;
+  --primary-light:     #d0ecf9;
+
+  --secondary-color:   #26348B;
+  --secondary-dark:    #1a2466;
+  --secondary-light:   #e8eaf6;
+  /* ── Neutros ──────────────────────────────────────── */
+  --white-color:  #FFFFFF;
+  --gray-light:   #F4F6FA;  
+  --gray-mid:     #e0e4ec;  
+  --gray-text:    #5A6070;  
+  --font-color:   #1D1D1B;  
+
+  /* ── Destaques ────────────────────────────────────── */
+  --button-color: #35A3DC;   
+  --tag-color:    #9D4EDD;   
+  --border-menu-color: #EEEEEE;
+
+  /* ── Tipografia ───────────────────────────────────── */
+  --font-body: "Montserrat", sans-serif;
+
+  /* ── Layout ───────────────────────────────────────── */
+  --gap:           3rem;  
+  --container-max: 120rem;
+  --radius:        0.8rem;
+  --radius-lg:     1.2rem;
+
+  /* ── Sombras ──────────────────────────────────────── */
+  --shadow:    0 4px 24px rgba(0, 0, 0, 0.10);  /* Sombra suave   */
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.14);  /* Sombra média   */
+
+  /* ── Navbar ───────────────────────────────────────── */
+  --navbar-height: 7rem;
+
+
+  /* --white-color:#FFFFFF;
   --light-gray-color: #F4F6FA;
   --primary-color:#3CA4DC;
-  --secundary-color:#26348B;
+  --secondary-color:#26348B;
+  --font-color:#1D1D1B;
+  --secondary-dark:#1a2466;
   --blue-color:#0003FF;
   --light-blue-color:#47AAE1;
   --secundary-blue-color:#0E3BF8;
-  --font-color:#1D1D1B;
   --button-color:#35A3DC;
   --tag-color:#9D4EDD;
   --border-menu-color:#EEEEEE;
-  --gap:3rem;
+  --gap:3rem; */
 }
