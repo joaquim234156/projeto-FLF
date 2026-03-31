@@ -17,9 +17,7 @@
 <body>
   <aside id="home" class="white-bg menu">
     <div class="main-content menu-content">
-      <h1>
-        <a href="#home"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
-      </h1>
+        <a href="#home" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
       <ul>
         <li><a href="#">Sobre</a></li>
         <li><a href="#">Cursos</a></li>
@@ -31,6 +29,59 @@
   </aside>
 
   <div class="menu-spacing"></div>
+
+  <section class="hero">
+    <div class="container hero_inner">
+      <div class="hero__texto">
+
+        <!-- Badge de urgência/destaque -->
+        <div class="hero__badge">
+          <span class="badge badge-primary">Matrículas Abertas — 2026.2</span>
+        </div>
+
+        <!--
+          Título principal: a tag <span> recebe a cor de destaque
+          definida em styles.css (.hero__titulo span)
+        -->
+        <h1 class="hero__titulo">
+          Seu futuro<br>
+          começa <span>aqui.</span>
+        </h1>
+
+        <p class="hero__desc">
+          A Faculdade Luciano Feijão abre as portas para o semestre 2026.2.
+          Cursos de graduação, pós-graduação e EaD com qualidade reconhecida pelo MEC.
+        </p>
+
+        <!-- Dois botões: primário (ação) + outline (conhecer) -->
+        <div class="hero__acoes">
+          <a href="#inscricao" class="btn btn-primary">Garanta sua vaga</a>
+          <a href="cursos.html" class="btn btn-outline">Ver cursos</a>
+        </div>
+      </div>
+
+      <!-- Coluna direita: imagem/vídeo do campus -->
+      <div class="hero__midia">
+
+        <!--
+          ⚠️  PLACEHOLDER — Substitua por imagem real:
+          <img src="assets/img/campus.jpg" alt="Campus FLF">
+
+          Ou por um vídeo em autoplay:
+          <video src="assets/video/campus.mp4" autoplay muted loop playsinline></video>
+        -->
+        <div class="hero__media-box">
+          <div class="hero__play-btn" aria-label="Assistir vídeo institucional"></div>
+          <span>Foto ou vídeo do campus aqui</span>
+        </div>
+
+        <!-- Card flutuante com estatística institucional -->
+        <div class="hero__stat">
+          <div class="hero__stat-num">+20</div>
+          <div class="hero__stat-label">anos formando<br>grandes profissionais</div>
+        </div>
+    </div>
+  </section>
 
   <section class="main-bg section">
     

@@ -1,29 +1,153 @@
-.main-bg{
+/* .main-bg{
   background-image: url(../img/large-triangles.svg);
   background-size: cover;
   background-position: center center;
   color: var(--white-color);
+} */
+
+/* ══════════════════════════════════════════════════════
+   CLASSES UTILITÁRIAS
+   Classes reutilizáveis em qualquer parte do HTML.
+   Evita repetição de CSS e facilita a manutenção.
+══════════════════════════════════════════════════════ */
+
+/* ── Containers ───────────────────────────────────── */
+
+/* Container padrão: centraliza e limita a largura do conteúdo */
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin-inline: auto; /* Centraliza horizontalmente */
 }
 
-.white-bg{
-  background-color: var(--white-color);
-  color: var(--font-color);
+/* Variante com padding interno (usada no menu) */
+.main-content {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gap);
 }
 
-.light-gray-bg{
-  background-color: var(--light-gray-color);
-  color: var(--font-color);
+/* ── Backgrounds ──────────────────────────────────── */
+.white-bg      { background-color: var(--white-color); }
+.primary-bg    { background-color: var(--primary-color); }
+.secondary-bg  { background-color: var(--secondary-color); }
+.gray-bg       { background-color: var(--gray-light); }
+.light-gray-bg { background-color: var(--gray-light); color: var(--font-color); }
+
+/* ── Cores de texto ───────────────────────────────── */
+.text-white     { color: var(--white-color); }
+.text-primary   { color: var(--primary-color); }
+.text-secondary { color: var(--secondary-color); }
+.text-muted     { color: var(--gray-text); }
+.text-center    { text-align: center; }
+
+/* ── Botões ───────────────────────────────────────── */
+/* Base: aplicar junto com uma variante de cor */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  /* Transição suave de cor e leve elevação no hover */
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.15s;
 }
 
-.blue-bg{
-  background-color: var(--secundary-color);
-  color: var(--white-color);
+/* Leve elevação ao passar o mouse em qualquer botão */
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-.primary-bg{
+/* Botão azul claro preenchido */
+.btn-primary {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Botão azul escuro preenchido */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+.btn-secondary:hover {
+  background-color: var(--secondary-dark);
+}
+
+/* Botão contorno branco (para fundos escuros) */
+.btn-outline {
+  background: transparent;
+  color: var(--white-color);
+  border-color: var(--white-color);
+}
+.btn-outline:hover {
+  background: var(--white-color);
+  color: var(--secondary-color);
+}
+
+/* Botão contorno azul claro (para fundos claros) */
+.btn-outline-primary {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* ── Badges / Tags ────────────────────────────────── */
+/* Pílulas pequenas de destaque (ex: "Matrículas Abertas") */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 9.9rem; /* Totalmente arredondado */
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-primary {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.badge-secondary {
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+}
+
+/* ── Títulos de seção ─────────────────────────────── */
+.section-title {
+  font-size: clamp(2.4rem, 3vw, 3.2rem);
+  font-weight: 700;
+  color: var(--font-color);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.6rem;
+  color: var(--gray-text);
+  max-width: 58rem;
+  line-height: 1.7;
+}
+
+/* ── Acessibilidade ───────────────────────────────── */
+/* Oculta visualmente mas mantém acessível para leitores de tela */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
 
 .main-content{
   max-width: 120rem;
@@ -39,3 +163,8 @@
   height: 6.5rem;
 }
 
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin-inline: auto; /* Centraliza horizontalmente */
+}

@@ -4,11 +4,15 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 100;
+  height: var(--navbar-height);
   border-bottom: 0.1rem solid var(--border-menu-color);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: visible;
 }
 
 .menu-content{
+  gap: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,6 +25,13 @@
   color: inherit;
 }
 
+.nav_logo img{
+  display: flex;
+  height: 4.2rem;
+  width: auto;
+  align-items: center;
+}
+
 .menu ul{
   list-style: none;
   display: flex;
@@ -29,7 +40,7 @@
 .menu ul li a{
   display: block;
   padding: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--font-color);
   position: relative;
   font-weight: 700;

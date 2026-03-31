@@ -13,6 +13,7 @@
   --secondary-color:   #26348B;
   --secondary-dark:    #1a2466;
   --secondary-light:   #e8eaf6;
+
   /* ── Neutros ──────────────────────────────────────── */
   --white-color:  #FFFFFF;
   --gray-light:   #F4F6FA;  
@@ -39,20 +40,7 @@
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.14);  /* Sombra média   */
 
   /* ── Navbar ───────────────────────────────────────── */
-  --navbar-height: 7rem;
+  --navbar-height: 6.5rem;
 
 
-  /* --white-color:#FFFFFF;
-  --light-gray-color: #F4F6FA;
-  --primary-color:#3CA4DC;
-  --secondary-color:#26348B;
-  --font-color:#1D1D1B;
-  --secondary-dark:#1a2466;
-  --blue-color:#0003FF;
-  --light-blue-color:#47AAE1;
-  --secundary-blue-color:#0E3BF8;
-  --button-color:#35A3DC;
-  --tag-color:#9D4EDD;
-  --border-menu-color:#EEEEEE;
-  --gap:3rem; */
 }
