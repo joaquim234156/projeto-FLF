@@ -15,7 +15,7 @@
   <title>Campanha 2026.2 FLF</title>
 </head>
 <body>
-  <aside id="home" class="white-bg menu">
+  <aside class="white-bg menu">
     <div class="main-content menu-content">
         <a href="#home" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
       <ul>
@@ -30,7 +30,7 @@
 
   <div class="menu-spacing"></div>
 
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="container hero_inner">
       <div class="hero__texto">
 
@@ -62,17 +62,21 @@
 
       <!-- Coluna direita: imagem/vídeo do campus -->
       <div class="hero__midia">
+        
+          <video class="hero__video" auto-play muted loop playsinline>
+            <source src="assets/img/video-instituicao-FLF.mp4" type="video/mp4">
+          </video>
 
         <!--
           ⚠️  PLACEHOLDER — Substitua por imagem real:
           <img src="assets/img/campus.jpg" alt="Campus FLF">
-
+          
           Ou por um vídeo em autoplay:
           <video src="assets/video/campus.mp4" autoplay muted loop playsinline></video>
-        -->
-        <div class="hero__media-box">
-          <div class="hero__play-btn" aria-label="Assistir vídeo institucional"></div>
-          <span>Foto ou vídeo do campus aqui</span>
+          -->
+          <div class="hero__media-box">
+            <!-- <div class="hero__play-btn" aria-label="Assistir vídeo institucional"></div>
+            <span>Foto ou vídeo do campus aqui</span> -->
         </div>
 
         <!-- Card flutuante com estatística institucional -->
@@ -81,6 +85,7 @@
           <div class="hero__stat-label">anos formando<br>grandes profissionais</div>
         </div>
     </div>
+
   </section>
 
   <section class="main-bg section">

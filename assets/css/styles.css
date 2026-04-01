@@ -87,13 +87,21 @@
   font-size: 1.4rem;
   text-align: center;
   overflow: hidden;
-
+  position: relative;
   /*
     ⚠️  SUBSTITUIR pelo código abaixo quando tiver imagem real:
     background-image: url('../img/campus.jpg');
     background-size: cover;
     background-position: center;
   */
+}
+
+.hero__video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
 }
 
 .hero__play-btn {
