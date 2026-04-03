@@ -2,10 +2,411 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos</title>
+  <meta name="description" content="Conheça todos os cursos da Faculdade Luciano Feijão — graduação presencial e EaD em Sobral, CE.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/elements.css">
+  <link rel="stylesheet" href="assets/css/class.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/cursos.css">
+  <title>Cursos — FLF Faculdade Luciano Feijão</title>
 </head>
 <body>
+
+  <aside class="white-bg menu">
+    <div class="main-content menu-content">
+        <a href="index.html" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
+      <ul>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="index.html#galeria">Galeria</a></li>
+        <li><a href="index.html#video">Vídeo</a></li>
+        <li><a href="index.html#inscricao">Inscreva-se</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <section class="cursos-hero">
+    <div class="container cursos-hero__inner">
+
+      <!-- Breadcrumb de navegação -->
+      <nav class="cursos-hero__breadcrumb" aria-label="Navegação estrutural">
+        <a href="index.html">Início</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Cursos</span>
+      </nav>
+
+      <h2 class="cursos-hero__titulo">Nossos Cursos</h2>
+      <p class="cursos-hero__subtitulo">
+        Graduação presencial e EaD com qualidade reconhecida pelo MEC
+      </p>
+
+    </div>
+  </section>
+
+  <div class="cursos-filtros">
+    <div class="container">
+      <div class="cursos-filtros__tabs" role="tablist" aria-label="Filtrar cursos por modalidade">
+
+        <button
+          class="filtro-tab ativo"
+          data-filtro="todos"
+          role="tab"
+          aria-selected="true"
+        >
+          Todos
+          <!-- O contador é atualizado pelo JS -->
+          <span class="filtro-tab__count" id="count-todos">13</span>
+        </button>
+
+        <button
+          class="filtro-tab"
+          data-filtro="presencial"
+          role="tab"
+          aria-selected="false"
+        >
+          Presencial
+          <span class="filtro-tab__count" id="count-presencial">8</span>
+        </button>
+
+        <button
+          class="filtro-tab"
+          data-filtro="ead"
+          role="tab"
+          aria-selected="false"
+        >
+          EaD
+          <span class="filtro-tab__count" id="count-ead">5</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+   <!-- ══════════════════════════════════════════════════
+       LISTA DE CURSOS
+       Cada .curso-card tem:
+         data-modalidade="presencial" ou "ead"
+         .curso-card__img com --img para a foto
+  ══════════════════════════════════════════════════ -->
+  <section class="cursos-lista">
+    <div class="container">
+
+      <!-- Cabeçalho com título e contagem dinâmica -->
+      <div class="cursos-lista__header">
+        <h2 class="cursos-lista__titulo">Cursos disponíveis</h2>
+        <span class="cursos-lista__info">13 cursos disponíveis</span>
+      </div>
+
+      <div class="cursos-grid">
+
+        <!-- ════════════════════════════
+             CURSOS PRESENCIAIS
+        ════════════════════════════ -->
+
+        <!--
+          Como adicionar imagem:
+          1. Coloque o arquivo em: assets/img/cursos/medicina.jpg
+          2. Adicione ao .curso-card__img:
+             style="--img: url('assets/img/cursos/medicina.jpg')"
+          3. Pode remover o .curso-card__img-placeholder
+        -->
+
+        <!-- Medicina -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <!-- ⚠️ Adicione: style="--img: url('assets/img/cursos/medicina.jpg')" -->
+            <div class="curso-card__img-placeholder" aria-hidden="true">🩺</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Medicina</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Enfermagem -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🏥</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Enfermagem</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Odontologia -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🦷</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Odontologia</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Arquitetura e Urbanismo -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🏛️</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Arquitetura e Urbanismo</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Psicologia -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🧠</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Psicologia</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Direito -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">⚖️</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Direito</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Administração (presencial) -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">📊</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Administração</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Engenharia Civil -->
+        <article class="curso-card" data-modalidade="presencial">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🏗️</div>
+            <span class="curso-card__badge curso-card__badge--presencial">Presencial</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Engenharia Civil</h3>
+            <p class="curso-card__modalidade">Bacharelado · Presencial · Sobral, CE</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-primary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ════════════════════════════
+             CURSOS EaD
+        ════════════════════════════ -->
+
+        <!-- Pedagogia -->
+        <article class="curso-card" data-modalidade="ead">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">📚</div>
+            <span class="curso-card__badge curso-card__badge--ead">EaD</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Pedagogia</h3>
+            <p class="curso-card__modalidade">Licenciatura · EaD</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-secondary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Recursos Humanos -->
+        <article class="curso-card" data-modalidade="ead">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">👥</div>
+            <span class="curso-card__badge curso-card__badge--ead">EaD</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Recursos Humanos</h3>
+            <p class="curso-card__modalidade">Tecnólogo · EaD</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-secondary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Serviço Social -->
+        <article class="curso-card" data-modalidade="ead">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🤲</div>
+            <span class="curso-card__badge curso-card__badge--ead">EaD</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Serviço Social</h3>
+            <p class="curso-card__modalidade">Bacharelado · EaD</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-secondary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Administração (EaD) -->
+        <article class="curso-card" data-modalidade="ead">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">💼</div>
+            <span class="curso-card__badge curso-card__badge--ead">EaD</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Administração</h3>
+            <p class="curso-card__modalidade">Bacharelado · EaD</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-secondary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Educação Física -->
+        <article class="curso-card" data-modalidade="ead">
+          <div class="curso-card__img">
+            <div class="curso-card__img-placeholder" aria-hidden="true">🏃</div>
+            <span class="curso-card__badge curso-card__badge--ead">EaD</span>
+          </div>
+          <div class="curso-card__body">
+            <h3 class="curso-card__nome">Educação Física</h3>
+            <p class="curso-card__modalidade">Licenciatura · EaD</p>
+            <div class="curso-card__cta">
+              <a href="https://www.flucianofeijao.com.br" target="_blank" rel="noopener" class="btn btn-secondary">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /cursos-grid -->
+    </div>
+  </section>
+
+  <section class="cta-final" id="inscricao">
+    <div class="container">
+      <h3 class="cta-final__titulo">Vagas limitadas para 2026.2</h3>
+      <p class="cta-final__subtitulo">Não perca a oportunidade. Faça sua pré-inscrição agora mesmo.</p>
+      <!-- Link externo para o site oficial da FLF -->
+      <a
+        href="https://www.flucianofeijao.com.br"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline"
+      >
+        Fazer pré-inscrição →
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+
+      <a href="#" class="footer__logo" aria-label="FLF - Voltar ao topo">
+        <img src="assets/img/Marca-FLF-2022-nome-preto.png" alt="Faculdade Luciano Feijão">
+      </a>
+      <div>
+        Rua José Lopes Ponte, 400 — Dom Expedito, Sobral - CE &nbsp;|&nbsp; (88) 3112-1001
+      </div>
+      Desenvolvido por Joaquim - IA auxiliar - Claude
+      <div class="footer__dev">
+        Desenvolvido com HTML, CSS &amp; JS — Estágio TI FLF 2025
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="fab-overlay" aria-hidden="true"></div>
+  
+  <div class="fab-menu" aria-label="Menu de navegação móvel">
+    <!-- Links — aparecem acima do botão ao abrir -->
+    <div class="fab-menu__links">
+      <a href="#home">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#video">Vídeo</a>
+      <a href="#inscricao" class="fab-cta">Inscreva-se</a>
+    </div>
+    
+    <!-- Botão principal do FAB -->
+      <button
+      class="fab-menu__btn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="fab-nav"
+      >
+      <span class="fab-icon-open" aria-hidden="true">☰</span>
+      <span class="fab-icon-close" aria-hidden="true">✕</span>
+    </button>
+  </div>
+
+  <script src="assets/js/cursos.js"></script>
+  <script src="assets/js/menu.js"></script>
   
 </body>
 </html>

@@ -1,0 +1,383 @@
+/* ══════════════════════════════════════════════════════
+   CURSOS.CSS — Estilos da página de cursos
+   
+   Seções:
+   1. Hero da página de cursos
+   2. Filtros (Todos / Presencial / EaD)
+   3. Grid de cards de curso
+   4. Card de curso individual
+   5. Responsividade
+══════════════════════════════════════════════════════ */
+
+
+/* ══════════════════════════════
+   1. HERO DA PÁGINA DE CURSOS
+   Faixa de apresentação com título e breadcrumb.
+══════════════════════════════ */
+.cursos-hero {
+  background-color: var(--secondary-color);
+  padding: 12rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Forma decorativa herdada do hero principal */
+.cursos-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -4%;
+  width: 40%;
+  height: 100%;
+  background-color: var(--primary-color);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.12;
+}
+
+.cursos-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* Breadcrumb: "Início > Cursos" */
+.cursos-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1.6rem;
+}
+
+.cursos-hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.2s;
+}
+
+.cursos-hero__breadcrumb a:hover {
+  color: var(--primary-color);
+}
+
+.cursos-hero__breadcrumb span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cursos-hero__titulo {
+  color: var(--white-color);
+  margin-bottom: 0.8rem;
+}
+
+.cursos-hero__subtitulo {
+  font-size: 1.7rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* ══════════════════════════════
+   2. FILTROS DE CURSO
+   Abas: Todos / Presencial / EaD
+══════════════════════════════ */
+.cursos-filtros {
+  padding: 3.2rem 0 0;
+  background-color: var(--bg-page);
+  border-bottom: 2px solid var(--border-color);
+  background-color: var(--white-color);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: var(--navbar-height);
+  z-index: 50;
+  transition: background-color 0.3s ease;
+}
+
+/* Linha de abas */
+.cursos-filtros__tabs {
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
+}
+
+/* Cada aba */
+.filtro-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.2rem 2.4rem;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gray-text);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -2px; /* Sobrepõe a borda do container */
+}
+
+.filtro-tab:hover {
+  color: var(--primary-color);
+}
+
+/* Aba ativa */
+.filtro-tab.ativo {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Contador de cursos dentro da aba */
+.filtro-tab__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.filtro-tab.ativo .filtro-tab__count {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+
+/* ══════════════════════════════
+   3. GRID DE CURSOS
+   Container da listagem com header e grade de cards.
+══════════════════════════════ */
+.cursos-lista {
+  padding: 4rem 0 7rem;
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho da listagem: título + contagem */
+.cursos-lista__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cursos-lista__titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--font-color);
+  transition: color 0.3s ease;
+}
+
+.cursos-lista__info {
+  font-size: 1.4rem;
+  color: var(--gray-text);
+}
+
+/* Grade de cards: 3 colunas no desktop */
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+
+/* ══════════════════════════════
+   4. CARD DE CURSO
+   Cada curso tem: imagem, modalidade, nome e CTA.
+══════════════════════════════ */
+.curso-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--shadow-theme);
+  border: 1px solid var(--border-color);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  /* Esconde cards filtrados */
+  display: flex;
+  flex-direction: column;
+}
+
+.curso-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px var(--shadow-theme);
+}
+
+/*
+  Área da imagem do curso.
+  
+  ⚠️  Para adicionar imagem real:
+  Defina a variável --img no HTML inline:
+  <div class="curso-card__img" style="--img: url('../img/cursos/medicina.jpg')">
+  
+  O CSS usará essa variável como background-image.
+*/
+.curso-card__img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--secondary-color);
+  background-image: var(--img, none);  /* Usa a variável se existir */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Placeholder visual enquanto não há imagem */
+.curso-card__img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--placeholder-bg);
+  opacity: 1;
+  /* Quando houver imagem, esse overlay fica por cima (ajustar opacity) */
+  transition: opacity 0.3s;
+}
+
+/* Quando tem imagem, o overlay vira escurecimento suave */
+.curso-card__img[style]::before {
+  opacity: 0.3;
+}
+
+/* Texto de placeholder centralizado */
+.curso-card__img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.6rem;  /* Emoji/ícone do curso */
+  z-index: 1;
+}
+
+/* Badge de modalidade sobre a imagem */
+.curso-card__badge {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 9.9rem;
+}
+
+.curso-card__badge--presencial {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.curso-card__badge--ead {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+/* Corpo do card: nome e botão */
+.curso-card__body {
+  padding: 2rem 2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ocupa espaço restante → botão fica sempre embaixo */
+}
+
+.curso-card__nome {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--font-color);
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.curso-card__modalidade {
+  font-size: 1.3rem;
+  color: var(--gray-text);
+  margin-bottom: 1.6rem;
+}
+
+/* Empurra o botão para o fundo do card */
+.curso-card__cta {
+  margin-top: auto;
+}
+
+.curso-card__cta .btn {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem 1.6rem;
+}
+
+/* ── Animação de entrada dos cards ────────────────── */
+/*
+  Cards que entram após o filtro animam suavemente.
+  A classe .entrando é adicionada via JS.
+*/
+@keyframes cardEntrar {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.curso-card.entrando {
+  animation: cardEntrar 0.3s ease forwards;
+}
+
+/* Cards ocultos pelo filtro */
+.curso-card.oculto {
+  display: none;
+}
+
+
+/* ══════════════════════════════
+   5. RESPONSIVIDADE
+══════════════════════════════ */
+
+/* Tablet (< 900px): 2 colunas */
+@media (max-width: 900px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cursos-hero {
+    /* No mobile, voltamos para o valor que você prefere */
+    padding: 5.5rem 0 5rem !important; 
+  }
+}
+
+/* Mobile (< 560px): 1 coluna + abas em scroll */
+@media (max-width: 560px) {
+  .cursos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Abas de filtro viram scroll horizontal no mobile */
+  .cursos-filtros__tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .cursos-filtros__tabs::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .filtro-tab {
+    white-space: nowrap; /* Não quebra o texto da aba */
+    padding: 1rem 1.6rem;
+  }
+}
