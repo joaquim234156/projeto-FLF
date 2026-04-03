@@ -369,32 +369,47 @@
   }
 }
 
-@media (max-width: 768px) {
-  .cursos-hero {
-    /* No mobile, voltamos para o valor que você prefere */
-    padding: 5.5rem 0 5rem !important; 
-  }
-}
-
-/* Mobile (< 560px): 1 coluna + abas em scroll */
+/* Mobile Geral (< 560px) */
 @media (max-width: 560px) {
   .cursos-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Abas de filtro viram scroll horizontal no mobile */
+  /* 1. Garantir que o container permita o scroll */
   .cursos-filtros__tabs {
+    display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none; 
+    gap: 0.5rem; /* Pequeno espaço entre as abas */
+    padding: 0 1rem; /* Respiro nas laterais para não colar na borda */
   }
 
   .cursos-filtros__tabs::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
   }
 
+  /* 2. Ajuste específico para telas muito pequenas (iPhone 5/SE antigo) */
   .filtro-tab {
-    white-space: nowrap; /* Não quebra o texto da aba */
-    padding: 1rem 1.6rem;
+    white-space: nowrap;
+    /* Diminuímos o padding lateral de 2.4rem para 1.2rem */
+    padding: 1rem 1.2rem; 
+    font-size: 1.4rem; /* Diminuímos levemente a fonte */
+    flex-shrink: 0; /* IMPEDIR que a aba se esprema/quebre */
+  }
+
+  .filtro-tab__count {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/* Ajuste extra para a largura exata do iPhone 5 (320px) */
+@media (max-width: 320px) {
+  .filtro-tab {
+    padding: 1rem 0.8rem;
+    gap: 0.4rem;
   }
 }
