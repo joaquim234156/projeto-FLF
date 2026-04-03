@@ -42,5 +42,14 @@
   /* ── Navbar ───────────────────────────────────────── */
   --navbar-height: 6.5rem;
 
-
+  --bg-page:        #FFFFFF;
+  --bg-alt:         #F4F6FA;  /* Seções alternadas (destaques, etc.) */
+  --card-bg:        #FFFFFF;
+  --font-color:     #1D1D1B;
+  --gray-text:      #5A6070;
+  --border-color:   #EEEEEE;
+  --shadow-theme:   rgba(0, 0, 0, 0.10);
+  --navbar-bg:      #FFFFFF;
+  --footer-bg:      #1a2466;  /* secondary-dark */
+  --placeholder-bg: linear-gradient(135deg, #26348B, #1a2466);
 }

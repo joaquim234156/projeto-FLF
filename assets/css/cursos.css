@@ -82,7 +82,7 @@
   background-color: var(--bg-page);
   border-bottom: 2px solid var(--border-color);
   background-color: var(--white-color);
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  /* box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06); */
   position: sticky;
   top: var(--navbar-height);
   z-index: 50;
@@ -195,10 +195,10 @@
   box-shadow: 0 4px 20px var(--shadow-theme);
   border: 1px solid var(--border-color);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.3s ease,
-    border-color 0.3s ease;
+  transform 0.25s ease,
+  box-shadow 0.25s ease,
+  background-color 0.3s ease,
+  border-color 0.3s ease;
 
   /* Esconde cards filtrados */
   display: flex;
@@ -223,12 +223,23 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   background-color: var(--secondary-color);
-  background-image: var(--img, none);  /* Usa a variável se existir */
+  background-image: var(--img);
   background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
+
+.curso-card__img-foto {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
 
 /* Placeholder visual enquanto não há imagem */
 .curso-card__img::before {
@@ -237,13 +248,18 @@
   inset: 0;
   background: var(--placeholder-bg);
   opacity: 1;
+  z-index: -1;
   /* Quando houver imagem, esse overlay fica por cima (ajustar opacity) */
   transition: opacity 0.3s;
 }
 
 /* Quando tem imagem, o overlay vira escurecimento suave */
 .curso-card__img[style]::before {
-  opacity: 0.3;
+  display: none !important;
+}
+
+.curso-card__img[style] .curso-card__img-placeholder {
+  display: none !important; /* Mata o emoji */
 }
 
 /* Texto de placeholder centralizado */
@@ -269,6 +285,7 @@
   text-transform: uppercase;
   padding: 0.3rem 1rem;
   border-radius: 9.9rem;
+  z-index: 2;
 }
 
 .curso-card__badge--presencial {
