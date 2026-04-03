@@ -17,7 +17,7 @@
 <body>
   <aside class="white-bg menu">
     <div class="main-content menu-content">
-        <a href="#home" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
+        <a href="#" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
       <ul>
         <li><a href="#">Sobre</a></li>
         <li><a href="#">Cursos</a></li>
@@ -30,7 +30,7 @@
 
   <div class="menu-spacing"></div>
 
-  <section id="home" class="hero">
+  <section id="" class="hero">
     <div class="container hero_inner">
       <div class="hero__texto">
 
@@ -55,7 +55,7 @@
 
         <!-- Dois botões: primário (ação) + outline (conhecer) -->
         <div class="hero__acoes">
-          <a href="#inscricao" class="btn btn-primary">Garanta sua vaga</a>
+          <a href="#" class="btn btn-primary">Garanta sua vaga</a>
           <a href="cursos.html" class="btn btn-outline">Ver cursos</a>
         </div>
       </div>
@@ -88,17 +88,145 @@
 
   </section>
 
-  <section class="main-bg section">
-    
+  <section class="destaques" id="destaques">
+    <div class="container">
+
+      <!-- Cabeçalho da seção -->
+      <div class="destaques__header text-center">
+        <h2 class="section-title">Por que escolher a FLF?</h2>
+        <p class="section-subtitle">
+          Reconhecida como 1º lugar em qualidade de ensino em Sobral, a FLF oferece
+          mais do que formação — oferece uma trajetória.
+        </p>
+      </div>
+
+      <!-- Grid responsivo: auto-fit coloca quantas colunas couberem -->
+      <div class="destaques__grid">
+
+        <!-- Card 1 -->
+        <div class="card-destaque">
+          <div class="card-destaque__icone">🏆</div>
+          <h3 class="card-destaque__titulo">Nota máxima no MEC</h3>
+          <p class="card-destaque__texto">
+            Avaliação de excelência que garante o reconhecimento do seu diploma
+            em todo o território nacional.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card-destaque">
+          <div class="card-destaque__icone">📚</div>
+          <h3 class="card-destaque__titulo">Graduação e Pós</h3>
+          <p class="card-destaque__texto">
+            Cursos presenciais e EaD nas áreas de Direito, Administração,
+            Psicologia e muito mais.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-destaque">
+          <div class="card-destaque__icone">💡</div>
+          <h3 class="card-destaque__titulo">Ensino prático</h3>
+          <p class="card-destaque__texto">
+            Núcleo de Prática Jurídica, laboratórios e projetos de extensão
+            que conectam teoria e mercado de trabalho.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card-destaque">
+          <div class="card-destaque__icone">🤝</div>
+          <h3 class="card-destaque__titulo">FIES disponível</h3>
+          <p class="card-destaque__texto">
+            Financiamento estudantil para que nenhum estudante fique sem
+            a oportunidade de se graduar.
+          </p>
+        </div>
+
+      </div><!-- /destaques__grid -->
+
+      <!-- Link para a página completa de cursos -->
+      <div style="text-align:center; margin-top: 3.6rem;">
+        <a href="cursos.html" class="btn btn-outline-primary">Ver todos os cursos →</a>
+      </div>
+
+    </div>
   </section>
 
-  <section class="light-gray-bg section">
-  <!-- conteúdo aqui -->
+
+  <section class="galeria" id="galeria">
+    <div class="container">
+
+      <div class="galeria__header text-center">
+        <h2 class="section-title">Nossa comunidade</h2>
+        <p class="section-subtitle">
+          Momentos capturados na FLF — campus, eventos e a vida acadêmica que
+          espera por você no semestre 2026.2.
+        </p>
+      </div>
+
+      <!--
+        Grid de 3 colunas. O primeiro item ocupa 2 colunas (foto destaque).
+        Para usar imagens reais, substitua .galeria__placeholder por:
+        <img src="assets/img/foto-1.jpg" alt="Descrição da foto">
+      -->
+      <div class="galeria__grid">
+
+        <!-- Foto destaque (ocupa 2 colunas no desktop) -->
+        <div class="galeria__item">
+          <div class="galeria__placeholder">Foto destaque</div>
+          <div class="galeria__legenda">🎓 Formatura 2025.2 — Auditório principal</div>
+        </div>
+
+        <div class="galeria__item">
+          <div class="galeria__placeholder">Foto 2</div>
+          <div class="galeria__legenda">📸 Vida no campus</div>
+        </div>
+
+        <div class="galeria__item">
+          <div class="galeria__placeholder">Foto 3</div>
+          <div class="galeria__legenda">🔬 Laboratórios</div>
+        </div>
+
+        <div class="galeria__item">
+          <div class="galeria__placeholder">Foto 4</div>
+          <div class="galeria__legenda">⚖️ Núcleo de Prática Jurídica</div>
+        </div>
+
+        <div class="galeria__item">
+          <div class="galeria__placeholder">Foto 5</div>
+          <div class="galeria__legenda">🌟 Eventos e palestras</div>
+        </div>
+
+      </div>
+
+      <!-- Link externo para o Instagram oficial -->
+      <div class="galeria__cta">
+        <a
+          href="https://www.instagram.com/flfeijao/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline-primary"
+        >
+          Ver mais no Instagram @flfeijao
+        </a>
+      </div>
+
+    </div>
   </section>
+
+
+  <!-- <section class="main-bg section">
+    
+  </section> -->
+
+  <!-- <section class="light-gray-bg section">
   
+  </section> -->
+<!--   
   <section class="white-bg section">
-  <!-- conteúdo aqui -->
-  </section>
+  
+  </section> -->
 
 
 </body>
