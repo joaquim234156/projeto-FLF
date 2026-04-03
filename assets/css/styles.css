@@ -273,7 +273,7 @@
   inset: 0;
   /* background: rgba(38, 52, 139, 0.18); */
   opacity: 0;
-  transition: opacity: 0.5s;
+  transition: opacity 0.5s;
 }
 
 .galeria__item:hover::after {
