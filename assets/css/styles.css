@@ -403,3 +403,35 @@
   margin-bottom: 3.2rem;
 }
 
+/* ══════════════════════════════
+   7. FOOTER
+   Barra inferior com logo, endereço e créditos.
+══════════════════════════════ */
+.footer {
+  background-color: var(--secondary-dark);
+  color: rgba(255, 255, 255, 0.55);
+  padding: 3rem 0;
+  font-size: 1.4rem;
+}
+
+/* Flex: logo | endereço | crédito */
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;  /* Quebra em telas pequenas */
+  gap: 1.2rem;
+}
+
+/* Logo invertida para o fundo escuro */
+.footer__logo img {
+  height: 3.6rem;
+  filter: brightness(0) invert(1); /* Torna a logo branca */
+  opacity: 0.85;
+}
+
+/* Texto de créditos do desenvolvedor */
+.footer__dev {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.3);
+}
