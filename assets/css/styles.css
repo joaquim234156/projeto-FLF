@@ -435,3 +435,64 @@
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.3);
 }
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+
+  /* Empilha hero e vídeo em coluna única */
+  .hero_inner,
+  .secao-video__inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* Remove forma decorativa (não fica bem em coluna) */
+  .hero::before {
+    display: none;
+  }
+
+  /* Reposiciona o card stat para não cortar */
+  .hero__stat {
+    left: 0;
+    bottom: -3rem;
+  }
+
+  /* Galeria vira 2 colunas */
+  .galeria__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria__item:first-child {
+    grid-column: span 2; /* Mantém foto destaque */
+  }
+}
+
+/* ── Mobile (< 560px) ─────────────────────────────── */
+@media (max-width: 560px) {
+
+  /* Galeria em coluna única */
+  .galeria__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria__item:first-child {
+    grid-column: span 1;
+  }
+
+  /* Botões do hero em coluna */
+  .hero__acoes {
+    flex-direction: column;
+  }
+
+  /* Card stat volta ao fluxo normal */
+  .hero__stat {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  /* Footer centralizado */
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

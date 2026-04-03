@@ -17,18 +17,18 @@
 <body>
   <aside class="white-bg menu">
     <div class="main-content menu-content">
-        <a href="#" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
+        <a href="#home" class="nav_logo"><img src="https://flucianofeijao.com.br/flf/wp-content/uploads/2016/01/Logo_topo_Site.png" alt="Faculdade Luciano Feijão"></a>
       <ul>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">sei la</a></li>
-        <li><a href="#">teste 1</a></li>
-        <li><a href="#">teste 1</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#video">Vídeo</a></li>
+        <li><a href="#inscricao">Inscrição</a></li>
       </ul>
     </div>
   </aside>
 
-  <div class="menu-spacing"></div>
+  <div id="home" class="menu-spacing"></div>
 
   <section id="" class="hero">
     <div class="container hero_inner">
@@ -63,20 +63,10 @@
       <!-- Coluna direita: imagem/vídeo do campus -->
       <div class="hero__midia">
         
-          <video class="hero__video" auto-play muted loop playsinline>
-            <source src="assets/img/video-instituicao-FLF.mp4" type="video/mp4">
+          <video class="hero__video" autoplay muted loop playsinline>
+            <source src="assets/video/video-instituicao-FLF.mp4" type="video/mp4">
           </video>
-
-        <!--
-          ⚠️  PLACEHOLDER — Substitua por imagem real:
-          <img src="assets/img/campus.jpg" alt="Campus FLF">
-          
-          Ou por um vídeo em autoplay:
-          <video src="assets/video/campus.mp4" autoplay muted loop playsinline></video>
-          -->
           <div class="hero__media-box">
-            <!-- <div class="hero__play-btn" aria-label="Assistir vídeo institucional"></div>
-            <span>Foto ou vídeo do campus aqui</span> -->
         </div>
 
         <!-- Card flutuante com estatística institucional -->
@@ -88,7 +78,7 @@
 
   </section>
 
-  <section class="destaques" id="destaques">
+  <section id="sobre" class="destaques">
     <div class="container">
 
       <!-- Cabeçalho da seção -->
@@ -238,8 +228,8 @@
         <a href="#inscricao" class="btn btn-primary">Quero me inscrever</a>
       </div>
       <div class="video-player">
-        <video class=""  src="assets/img/video-instituicao-FLF.mp4"
-         poster="assets/img/espaco_FLF.jpg" controls></video>
+        <video class=""  src="assets/video/video-instituicao-FLF.mp4"
+        poster="assets/img/espaco_FLF.jpg" controls></video>
       </div>
 
     </div>
@@ -268,17 +258,50 @@
       <a href="#" class="footer__logo" aria-label="FLF - Voltar ao topo">
         <img src="assets/img/Marca-FLF-2022-nome-preto.png" alt="Faculdade Luciano Feijão">
       </a>
-
       <div>
         Rua José Lopes Ponte, 400 — Dom Expedito, Sobral - CE &nbsp;|&nbsp; (88) 3112-1001
       </div>
-
+      Desenvolvido por Joaquim - IA auxiliar - Claude
       <div class="footer__dev">
-        Desenvolvido com HTML &amp; CSS — Estágio TI FLF 2025
+        Desenvolvido com HTML, CSS &amp; JS — Estágio TI FLF 2025
       </div>
 
     </div>
   </footer>
+
+  <!-- ══════════════════════════════════════════════════
+       MENU FAB FLUTUANTE (mobile)
+       Visível apenas em telas ≤ 768px.
+       O CSS cuida de display: none / flex.
+  ══════════════════════════════════════════════════ -->
+  
+  
+  <div class="fab-overlay" aria-hidden="true"></div>
+  
+  <div class="fab-menu" aria-label="Menu de navegação móvel">
+    <!-- Links — aparecem acima do botão ao abrir -->
+    <div class="fab-menu__links">
+      <a href="#home">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#video">Vídeo</a>
+      <a href="#inscricao" class="fab-cta">Inscreva-se</a>
+    </div>
+    
+    <!-- Botão principal do FAB -->
+      <button
+      class="fab-menu__btn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="fab-nav"
+      >
+      <span class="fab-icon-open" aria-hidden="true">☰</span>
+      <span class="fab-icon-close" aria-hidden="true">✕</span>
+    </button>
+  </div>
+
+  <script src="assets/js/menu.js"></script>
 
 </body>
 </html>

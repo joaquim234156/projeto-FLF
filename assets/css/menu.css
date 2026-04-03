@@ -9,6 +9,7 @@
   border-bottom: 0.1rem solid var(--border-menu-color);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
   overflow: visible;
+  transform: none; /* evita criar containing block para position:fixed */
 }
 
 .menu-content{
@@ -65,4 +66,173 @@
 .menu ul li a:hover::after{
   width: 50%;
   left: 25%;
+}
+
+/* Botão hambúrguer — OCULTO (usamos FAB no mobile) */
+.navbar__toggle {
+  display: none !important;
+}
+
+
+/* ══════════════════════════════════════════════════════
+   MENU FAB FLUTUANTE — Mobile
+   Botão fixo no canto inferior direito.
+   Ao clicar, expande os links verticalmente acima dele.
+══════════════════════════════════════════════════════ */
+
+.fab-menu {
+  display: none;
+  position: fixed;
+  bottom: 2.4rem;
+  right: 2.4rem;
+  left: auto;
+  top: auto;
+  width: auto;
+  z-index: 400;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 1.2rem;
+  isolation: isolate;
+  will-change: transform;           /* força camada de composição própria */
+  transform: translateZ(0);         /* hack GPU — garante position:fixed relativo ao viewport */
+  -webkit-transform: translateZ(0); /* Safari/iOS */
+}
+
+/* Botão principal */
+.fab-menu__btn {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(60, 164, 220, 0.45);
+  transition: background 0.2s, transform 0.25s;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.fab-menu__btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.08);
+}
+
+.fab-menu__btn .fab-icon-open,
+.fab-menu__btn .fab-icon-close {
+  position: absolute;
+  font-size: 2.2rem;
+  line-height: 1;
+  transition: opacity 0.2s, transform 0.25s;
+}
+
+.fab-menu__btn .fab-icon-close {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+.fab-menu.is-open .fab-menu__btn .fab-icon-open {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+.fab-menu.is-open .fab-menu__btn .fab-icon-close {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+/* Lista de links */
+.fab-menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fab-menu.is-open .fab-menu__links {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+/* Cada link-pílula */
+.fab-menu__links a {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background-color: var(--white-color);
+  color: var(--font-color);
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 9.9rem;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.13);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+
+.fab-menu__links a:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  transform: translateX(-4px);
+}
+
+.fab-menu__links .fab-cta {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+.fab-menu__links .fab-cta:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Overlay */
+.fab-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 290;
+  opacity: 0;
+  pointer-events: none; /* ← não bloqueia cliques quando fechado */
+  transition: opacity 0.25s;
+}
+.fab-overlay.is-open {
+  opacity: 1;
+  pointer-events: all; /* ← só bloqueia quando aberto (para fechar ao clicar fora) */
+}
+
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVO
+══════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Mantém a barra do menu, mas esconde a lista de links e outros elementos */
+  .menu ul,
+  .menu-content > button,
+  .menu-content > a:not(.nav_logo) {
+    display: none !important;
+  }
+  /* Garante que a logo fique centralizada ou alinhada à esquerda */
+  .menu-content {
+    justify-content: center; /* Centraliza a logo no mobile */
+    height: 100%;
+  }
+  /* Mantém o padding no body para o conteúdo não subir demais */
+  body {
+    padding-top: var(--navbar-height) !important;
+  }
+  /* Ativa o FAB normalmente */
+  .fab-menu {
+    display: flex;
+  }
+  .fab-overlay {
+    display: block;
+  }
 }
