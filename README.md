@@ -2,7 +2,7 @@
 
 Landing page institucional desenvolvida para a campanha de captação de alunos do semestre **2026.2** da [Faculdade Luciano Feijão](https://www.flucianofeijao.com.br), localizada em Sobral — CE.
 
-> Projeto desenvolvido durante o **Estágio de TI — FLF 2025**, por **Joaquim Bismarck**.
+> Projeto desenvolvido durante o período da ** Seleção de Estágio — FLF 2026**, por **Joaquim Bismarck**.
 
 ---
 
